@@ -30,8 +30,8 @@ if [ $? -ne 0 ]; then
     echo -e "${R}[ERRO FATAL]${NC} O comando 'make' falhou."
     exit 1
 fi
-echo -e "${G}[OK]${NC} Build finalizado. Aguardando 10 segundos..."
-sleep 10
+echo -e "${G}[OK]${NC} Build finalizado. Aguardando 30 segundos..."
+sleep 30
 
 echo -e "\n=== 42 INCEPTION: TECH CHECKER FINAL ==="
 
@@ -98,7 +98,7 @@ done
 
 echo test > /home/$LOGIN/data/wordpress/persist.txt
 docker compose -f srcs/docker-compose.yml restart >/dev/null 2>&1
-sleep 5
+sleep 10
 execute_test "test -f /home/$LOGIN/data/wordpress/persist.txt" "Dados persistiram após restart"
 rm -f /home/$LOGIN/data/wordpress/persist.txt
 
